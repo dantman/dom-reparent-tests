@@ -6,7 +6,7 @@ title: >
 {% include header.html %}
 
 <div id="demo">
-	<iframe src="http://example.com/"></iframe>
+	<iframe src="https://example.com/"></iframe>
 </div>
 
 {% include demo.html %}
