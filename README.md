@@ -7,3 +7,4 @@ This is a collection of dom node reparenting tests. The intent is to test out ex
 - [`<audio>`](./audio.html)
 - [`<iframe>`](./iframe.html)
 - [scroll](./scroll.html)
+- [focus](./focus.html)

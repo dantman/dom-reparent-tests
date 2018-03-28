@@ -9,48 +9,7 @@
 
 <script>
 (function() {
-	var demo = document.getElementById('demo');
-	var demo2 = document.getElementById('demo2');
-	var buttons = document.getElementById('buttons');
-	var isDemo2 = false;
-
-	var reparent = {
-		direct: function reparentDirect(nodes, dest) {
-			nodes.forEach(function(node) {
-				dest.appendChild(node);
-			});
-		},
-		detach: function reparentDetach(nodes, dest) {
-			nodes.forEach(function(node) {
-				node.parentNode.removeChild(node);
-				dest.appendChild(node);
-			});
-		},
-		delay: function reparentDelay(nodes, dest) {
-			nodes.forEach(function(node) {
-				node.parentNode.removeChild(node);
-			});
-			setTimeout(function() {
-				nodes.forEach(function(node) {
-					dest.appendChild(node);
-				});
-			}, 1);
-		}
-	};
-
-	function doReparent(reparentNodes) {
-		var a = isDemo2 ? demo2 : demo;
-		var b = isDemo2 ? demo : demo2;
-
-		var nodes = Array.prototype.map.call(a.childNodes, function(node) {
-			return node;
-		});
-
-		reparentNodes(nodes, b);
-
-		isDemo2 = !isDemo2;
-	}
-
+{% include reparent.html %}
 	function onReparentClick(e) {
 		var reparentType = e.target.getAttribute('data-reparent');
 		doReparent(reparent[reparentType]);
